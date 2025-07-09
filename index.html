@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IAQUIZ_IFNC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="screen" id="start-screen">
+    <h1>IAQUIZ_IFNC</h1>
+    <img id="robo-face" src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-e8bc-61f5-a9e2-68bdee13568e/raw?se=2025-07-09T17%3A21%3A24Z&sp=r&sv=2024-08-04&sr=b&scid=907cde6d-50fa-5f95-b452-01432f1f83bb&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-08T21%3A28%3A34Z&ske=2025-07-09T21%3A28%3A34Z&sks=b&skv=2024-08-04&sig=JZrFaFI/NBrYIVftg8tNaUMpqNxDpuZk0CRn4gnq/nc%3D" alt="Robô IF" width="150"/>
+    <p><strong>Escolha sua área:</strong></p>
+    <select id="area-select">
+      <option value="informatica">Informática</option>
+      <option value="administracao">Administração</option>
+      <option value="quimica">Química</option>
+    </select>
+    <p><strong>Nível de dificuldade:</strong></p>
+    <select id="nivel-select">
+      <option value="facil">Fácil</option>
+      <option value="medio">Médio</option>
+      <option value="dificil">Difícil</option>
+    </select>
+    <input type="text" id="username" placeholder="Seu nome"/>
+    <button onclick="startGame()">Iniciar Quiz</button>
+    <button onclick="toggleTheme()">Tema: <span id="theme-status">Escuro</span></button>
+  </div>
+
+  <div class="screen" id="quiz-screen" style="display: none;">
+    <h2 id="greeting"></h2>
+    <div id="question-container">
+      <p id="question-text"></p>
+      <div id="answers" class="answers-container"></div>
+    </div>
+    <button onclick="nextQuestion()">Próxima</button>
+  </div>
+
+  <div class="screen" id="result-screen" style="display: none;">
+    <h2>Resultado Final</h2>
+    <img id="emotion-bot" src="" width="100" />
+    <p>Parabéns, <span id="final-username"></span>!</p>
+    <p>Você acertou <span id="score"></span> de <span id="total"></span> perguntas.</p>
+    <div id="badge"></div>
+    <div id="feedback"></div>
+    <h3>Ranking</h3>
+    <ul id="ranking"></ul>
+    <p id="chatbot"></p>
+    <div id="reset-container" style="display: none;">
+      <button onclick="resetRanking()">Resetar Ranking</button>
+    </div>
+    <canvas id="share-card" width="400" height="200" style="display:none;"></canvas>
+    <a id="download-link" download="meu_resultado.png">Baixar resultado para compartilhar</a>
+    <p class="credits">Site criado por <strong>Henrique Eduardo & Yasmin Gabrielly</strong> – <em>Turma: Info3M</em></p>
+    <button onclick="location.reload()">Jogar Novamente</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
